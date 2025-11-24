@@ -1,3 +1,4 @@
+@import "tailwindcss";
 /* Load Starwind core first so our tokens can override its CSS variables */
 @import "./starwind.css";
 /* Design tokens and theme overrides */
