@@ -24,10 +24,21 @@ function toNiceName(filePath: string): string {
   return trimmed.replace(/\b\w/g, (m) => m.toUpperCase());
 }
 
+const preferredOrder = ['flutter', 'dart', 'firebase', 'odoo', 'postgresql', 'python', 'typescript', 'javascript', 'html', 'css', 'docker', 'jira'];
+
 export const logos: LogoItem[] = Object.entries(modules)
   .map(([path, url]) => ({ name: toNiceName(path), logo: url as string }))
-  // Keep only a stable subset first (you can remove slice to include all)
-  .sort((a, b) => a.name.localeCompare(b.name));
+  // Sort using preferredOrder first, then alphabetically for the rest
+  .sort((a, b) => {
+    const la = a.name.toLowerCase();
+    const lb = b.name.toLowerCase();
+    const ia = preferredOrder.indexOf(la);
+    const ib = preferredOrder.indexOf(lb);
+    if (ia !== -1 && ib !== -1) return ia - ib;
+    if (ia !== -1) return -1;
+    if (ib !== -1) return 1;
+    return la.localeCompare(lb);
+  });
 
 export type { LogoItem };
 
