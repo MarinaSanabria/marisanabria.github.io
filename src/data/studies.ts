@@ -1,30 +1,33 @@
 export const studies = [
   {
-    title: "B.S. in Computer Science",
-    institution: "State University",
+    title: "Certified Tech Developer",
+    institution: "Digital House",
     description:
-      "Core CS foundations: data structures, algorithms, operating systems, networking, and databases; team capstone in web systems.",
+      "Formación orientada al desarrollo de software, incluyendo fundamentos de programación, estructura de datos, bases de datos, prácticas ágiles y desarrollo web.",
     tags: [
-      "Algorithms",
-      "Data Structures",
-      "Operating Systems",
-      "Databases",
-      "Networking",
+      "Programación",
+      "Bases de Datos",
+      "Estructuras de Datos",
+      "Metodologías Ágiles",
+      "Desarrollo Web",
     ],
   },
   {
-    title: "M.S. in Software Engineering",
-    institution: "Tech Institute",
+    title: "Metodologías Ágiles de Gestión",
+    institution: "Universidad Tecnológica Nacional (UTN)",
     description:
-      "Focus on distributed systems, testing strategies, and cloud architecture; thesis on resilience patterns in microservices.",
-    tags: [
-      "Distributed Systems",
-      "Cloud Architecture",
-      "Testing",
-      "Microservices",
-    ],
+      "Capacitación en prácticas ágiles para trabajo en equipo, planificación, mejora continua y colaboración en entornos de desarrollo.",
+    tags: ["Scrum", "Kanban", "Trabajo en Equipo", "Planificación Ágil"],
+  },
+  {
+    title: "Licenciatura en Relaciones Internacionales",
+    institution: "Universidad Siglo 21",
+    description:
+      "Formación universitaria que fortaleció habilidades analíticas, comunicación efectiva, pensamiento crítico y trabajo interdisciplinario.",
+    tags: ["Comunicación", "Análisis", "Investigación", "Trabajo Interdisciplinario"],
   },
 ];
+
 
 export type StudyItem = (typeof studies)[number];
 
